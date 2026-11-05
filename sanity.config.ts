@@ -19,6 +19,7 @@ export default defineConfig({
             // Minimum required configuration
             orderableDocumentListDeskItem({type: 'event', S, context}),
             orderableDocumentListDeskItem({type: 'plant', S, context}),
+            orderableDocumentListDeskItem({type: 'narrative', S, context}),
 
             // Optional configuration
             // orderableDocumentListDeskItem({
@@ -42,7 +43,7 @@ export default defineConfig({
             // ... all other desk items, e.g. all other document types not already included
             // @see https://www.sanity.io/docs/studio/structure-builder-cheat-sheet#k4eb3b1891dc2
             ...S.documentTypeListItems().filter(
-              (item) => !['event', 'plant'].includes(item.getId()),
+              (item) => !['event', 'plant', 'narrative'].includes(item.getId()),
             ),
           ])
       },
