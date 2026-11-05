@@ -6,12 +6,20 @@ export const eventType = defineType({
   type: 'document',
   fields: [
     defineField({
+      name: 'orderRank',
+      type: 'string',
+    }),
+    defineField({
       name: 'name',
       type: 'string',
     }),
     defineField({
       name: 'date',
       type: 'date',
+    }),
+    defineField({
+      name: "url",
+      type: "string"
     }),
     defineField({
       name: 'description',

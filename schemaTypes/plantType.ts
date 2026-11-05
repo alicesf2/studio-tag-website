@@ -1,10 +1,14 @@
 import {defineArrayMember, defineField, defineType} from 'sanity'
 
-export const eventType = defineType({
+export const plantType = defineType({
   name: 'plant',
   title: 'Plant',
   type: 'document',
   fields: [
+    defineField({
+      name: 'orderRank',
+      type: 'string',
+    }),
     defineField({
       name: 'name',
       type: 'string',
@@ -26,7 +30,7 @@ export const eventType = defineType({
           fields: [
             defineField({
               name: "description",
-              type: "string",
+              type: "text",
             }),
             defineField({
               name: "sources",
