@@ -1,4 +1,4 @@
-import {defineArrayMember, defineField, defineType} from 'sanity'
+import {defineField, defineType, defineArrayMember} from 'sanity'
 
 export const narrativeType = defineType({
   name: 'narrative',
@@ -6,21 +6,29 @@ export const narrativeType = defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'orderRank',
+      name: 'page',
       type: 'string',
     }),
     defineField({
-      name: 'name',
-      type: 'string',
-    }),
-    defineField({
-      name: 'text',
+      name: "text",
       type: 'array',
-      of: [
-        defineArrayMember({
-          type: 'string',
-        }),
-      ],
+      of: [defineArrayMember({type: 'string'})],
     }),
+    defineField({
+      name: "intro",
+      type: "string",
+    }),
+    defineField({
+      name: 'plantView',
+      type: 'string'
+    }),
+    defineField({
+      name: "historyView",
+      type: "string"
+    }),
+    defineField({
+      name: "eventView",
+      type: "string"
+    })
   ],
 })

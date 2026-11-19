@@ -14,6 +14,10 @@ export const plantType = defineType({
       type: 'string',
     }),
     defineField({
+      name: 'slug',
+      type: 'string',
+    }),
+    defineField({
       name: 'scientific',
       type: 'string',
     }),
@@ -50,9 +54,22 @@ export const plantType = defineType({
       type: 'array',
       of: [
         defineArrayMember({
-          name: 'image',
-          type: 'image',
-        }),
+          type: "object",
+          fields: [
+            defineField({
+              name: "image",
+              type: "image",
+            }),
+            defineField({
+              name: "altText",
+              type: "string",
+            }),
+            defineField({
+              name: "caption",
+              type: "string",
+            })
+          ]
+        })
       ],
     }),
   ],
